@@ -1,10 +1,11 @@
 #!/bin/bash
-if [ "$(whoami)" != "hduser" ]; then
-        echo "Script must be run as user: hduser"
+eval "$(cat credentials.txt)"
+
+if [ "$(whoami)" != "$HDUSER" ]; then
+        echo "Script must be run as user: $HDUSER"
         exit
 fi
 
-eval "$(cat credentials.txt)"
 #-----Change directory to the directory of the script------------------------
 cd "$(dirname "$0")"
 
