@@ -43,7 +43,7 @@ sudo chown -R $HDUSER:hadoop $KAFKA_HOME
 kafka-server-start.sh -daemon $KAFKA_HOME/config/server.properties
 #----------------------------------------------------------------------------
 #--------------------Creating a topic in kafka-------------------------------
-kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic testTopic
+#kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic testTopic
 
 #------------------------------------------------------------------------------
 
