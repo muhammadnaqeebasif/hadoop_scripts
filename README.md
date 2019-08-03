@@ -6,14 +6,22 @@ on default the user is set to "hadoop" and password is set to "hadoop" if you wa
 change these settings you can change HDUSER and PASS variables accordingly.
 - **user** this folder has shell script which setups the new user according to 
 the variables set in credentials.txt. You need to run the script as root/sudo user. 
-Run the script by typing the following command:
-	sudo bash user/setup.sh 
+Run the script by typing the following command:<br>
+	`sudo bash user/setup.sh` 
 - **hadoop** this folder contains the files used for installing and configuring hadoop. 
 Your user should be the user which was setted up in credentials.txt. To install and configure
-hadoop run the following command:
-	bash hadoop/setup.sh
+hadoop run the following command:<br>
+	`bash hadoop/setup.sh`
 - **hive** this folder contains the files used for installing and configuring hive on hadoop cluster.
 Your user should be the user which was setted up in credentials.txt. To install and configure
-hive run the following command:
-	bash hive/setup.sh
+hive run the following command:<br>
+	`bash hive/setup.sh`
+- **sql-server** this folder contains the files used for installing and configuring sql-server.
+Your user should be the user which was setted up in credentials.txt. To install and configure
+sql-server run the following command:<br>
+	`bash sql-server/setup.sh`
 
+- **sqoop** this folder contains the files used for installing and configuring sqoop on hadoop cluster.
+Your user should be the user which was setted up in credentials.txt. To install and configure
+sqoop run the following command:<br>
+	`bash sqoop/setup.sh`
