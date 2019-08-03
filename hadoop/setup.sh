@@ -54,7 +54,7 @@ mkdir -p $HDUSER_HOME/mydata/hdfs/namenode
 mkdir -p $HDUSER_HOME/mydata/hdfs/datanode
 rm $HADOOP_INSTALL/etc/hadoop/mapred-site.xml.template
 cp configs/* $HADOOP_INSTALL/etc/hadoop/
-sed -i "s|HDUSER_HOME|$HOME|g" $HADOOP_INSTALL/etc/hadoop/hdfs-site.xml
+sed -i "s|HDUSER_HOME|$HDUSER_HOME|g" $HADOOP_INSTALL/etc/hadoop/hdfs-site.xml
 sed -i "s|\${JAVA_HOME}|$JAVA_HOME|g" $HADOOP_INSTALL/etc/hadoop/hadoop-env.sh
 
 #-------------------------Starting hdfs---------------------------------------------------
