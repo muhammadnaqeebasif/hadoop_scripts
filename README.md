@@ -30,3 +30,9 @@ sqoop run the following command:<br>
 Your user should be the user which was setted up in credentials.txt. To install and configure
 apache pig run the following command:<br>
 	`bash pig/setup.sh`
+	
+- **hbase** this folder contains the files used for installing and configuring hbase.
+Your user should be the user which was setted up in credentials.txt. To install and configure
+hbase run the following command:<br>
+	`bash hbase/setup.sh`
+	
