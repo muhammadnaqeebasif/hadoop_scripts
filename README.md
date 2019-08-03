@@ -1,4 +1,19 @@
 # hadoop_scripts
 This repository contains script for installing different big data components in Ubuntu 18.04
-
+This repository contains the following folders and files:
+- **credentials.txt** this file contains the credentials for the hadoop user 
+on default the user is set to "hadoop" and password is set to "hadoop" if you want to
+change these settings you can change HDUSER and PASS variables accordingly.
+- **user** this folder has shell script which setups the new user according to 
+the variables set in credentials.txt. You need to run the script as root/sudo user. 
+Run the script by typing the following command:
+	sudo bash user/setup.sh 
+- **hadoop** this folder contains the files used for installing and configuring hadoop. 
+Your user should be the user which was setted up in credentials.txt. To install and configure
+hadoop run the following command:
+	bash hadoop/setup.sh
+- **hive** this folder contains the files used for installing and configuring hive on hadoop cluster.
+Your user should be the user which was setted up in credentials.txt. To install and configure
+hive run the following command:
+	bash hive/setup.sh
 
