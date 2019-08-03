@@ -45,3 +45,5 @@ hbase run the following command:<br>
 Your user should be the user which was setted up in credentials.txt. To install and configure
 hbase run the following command:<br>
 	`bash flask/setup.sh`
+
+- **install.sh** it will setup all the components mentioned above.
