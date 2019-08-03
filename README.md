@@ -40,3 +40,8 @@ hbase run the following command:<br>
 Your user should be the user which was setted up in credentials.txt. To install and configure
 hbase run the following command:<br>
 	`bash flume/setup.sh`
+
+- **flask** this folder contains the files used for installing and configuring flask.
+Your user should be the user which was setted up in credentials.txt. To install and configure
+hbase run the following command:<br>
+	`bash flask/setup.sh`
