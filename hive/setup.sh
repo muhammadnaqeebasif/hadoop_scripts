@@ -11,6 +11,8 @@ cd "$(dirname "$0")"
 #----------------------------------------------------------------------------
 
 #---------------Downloading apache hive--------------------------------
+mkdir -p binaries
+
 if [ -e binaries/apache-hive-2.3.5-bin.tar.gz ]
 then
 	echo "OK"

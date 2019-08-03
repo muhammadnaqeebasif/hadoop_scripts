@@ -10,7 +10,7 @@ fi
 cd "$(dirname "$0")"
 
 #-------------------Downloading the hadoop binaries-------------------------------
-mkdir binaries
+mkdir -p binaries
 
 if [ -e binaries/hadoop-2.9.2.tar.gz ]
 then
