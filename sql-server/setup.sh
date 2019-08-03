@@ -14,7 +14,7 @@ cd "$(dirname "$0")"
 echo $PASS | sudo apt update
 echo $PASS | sudo apt-get install -y mysql-server
 #securing mysql
-echo $PASS | sudo mysql_secure_installation
+#echo $PASS | sudo mysql_secure_installation
 echo $PASS | sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'hadoop'; FLUSH PRIVILEGES;"
 #Downloading Employee DB
 git clone https://github.com/datacharmer/test_db.git

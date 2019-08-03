@@ -9,6 +9,8 @@ eval "$(cat credentials.txt)"
 cd "$(dirname "$0")"
 
 #-------------------Downloading the sqoop binaries-------------------------------
+mkdir -p binaries
+
 if [ -e binaries/sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz ]
 then
 	echo "OK"
