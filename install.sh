@@ -34,3 +34,6 @@ sudo -u $HDUSER bash flume/setup.sh
 
 #-----------Installing Kafka------------------
 sudo -u $HDUSER bash kafka/setup.sh
+
+#-----------Installing Nifi------------------
+sudo -u $HDUSER bash nifi/setup.sh

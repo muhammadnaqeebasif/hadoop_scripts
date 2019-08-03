@@ -38,12 +38,16 @@ hbase run the following command:<br>
 
 - **flume** this folder contains the files used for installing and configuring flume.
 Your user should be the user which was setted up in credentials.txt. To install and configure
-hbase run the following command:<br>
+flume run the following command:<br>
 	`bash flume/setup.sh`
 
-- **flask** this folder contains the files used for installing and configuring flask.
+- **kafka** this folder contains the files used for installing and configuring kafka.
 Your user should be the user which was setted up in credentials.txt. To install and configure
-hbase run the following command:<br>
-	`bash flask/setup.sh`
-
+kafka run the following command:<br>
+	`bash kafka/setup.sh`
+	
+- **nifi** this folder contains the files used for installing and configuring nifi.
+Your user should be the user which was setted up in credentials.txt. To install and configure
+nifi run the following command:<br>
+	`bash nifi/setup.sh`
 - **install.sh** it will setup all the components mentioned above.
