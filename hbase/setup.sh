@@ -48,7 +48,7 @@ sudo chown hduser:hadoop $HBASE_HOME
 cp configs/hbase-site.xml $HBASE_HOME/conf/hbase-site.xml
 # Creating zookeeper directory
 sudo mkdir -p /hadoop/zookeeper
-sudo chown -R hduser:hadoop /hadoop/
+sudo chown -R $HDUSER:hadoop /hadoop/
 
 #--------------------------------------------------------------------------------
 start-hbase.sh
