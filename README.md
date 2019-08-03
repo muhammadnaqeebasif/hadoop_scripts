@@ -25,3 +25,8 @@ sql-server run the following command:<br>
 Your user should be the user which was setted up in credentials.txt. To install and configure
 sqoop run the following command:<br>
 	`bash sqoop/setup.sh`
+	
+- **pig** this folder contains the files used for installing and configuring apache pig.
+Your user should be the user which was setted up in credentials.txt. To install and configure
+apache pig run the following command:<br>
+	`bash pig/setup.sh`
