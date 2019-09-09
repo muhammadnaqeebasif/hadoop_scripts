@@ -35,7 +35,7 @@ echo "export PATH=\$PATH:\$HIVE_HOME/bin" >> $HDUSER_HOME/.bashrc
 eval "$(cat $HDUSER_HOME/.bashrc)"
 sudo cp configs/hive-config.sh $HIVE_HOME/conf/
 sudo cp configs/hive-site.xml $HIVE_HOME/conf/
-sudo chown -R hadoop:hadoop $HIVE_HOME
+sudo chown -R $HDUSER:hadoop $HIVE_HOME
 #-----------------------------------------------------------------------
 #------------------Create a direcotry for hive warehouse into hdfs------
 hdfs dfs -mkdir -p /user/hive/warehouse
