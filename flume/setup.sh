@@ -20,20 +20,20 @@ fi
 
 #-------------------------------------------------------------------------------
 #------------------Extracting the tar file--------------------------------------
-echo $PASS | sudo tar -xvzf binaries/apache-flume-1.9.0-bin.tar.gz -C /usr/local/
-echo $PASS | sudo mv /usr/local/apache-flume-1.9.0-bin/ /usr/local/flume
+tar -xvzf binaries/apache-flume-1.9.0-bin.tar.gz -C $HDUSER_HOME/
+mv $HDUSER_HOME/apache-flume-1.9.0-bin/ $HDUSER_HOME/flume
 
 #------------------Configuring bash ---------------------------------------
 echo "" >> $HDUSER_HOME/.bashrc
 echo "#Set FLUME_HOME" >> $HDUSER_HOME/.bashrc
-echo "export FLUME_HOME=/usr/local/flume" >> $HDUSER_HOME/.bashrc
+echo "export FLUME_HOME=$HDUSER_HOME/flume" >> $HDUSER_HOME/.bashrc
 echo "export PATH=\$PATH:\$FLUME_HOME/bin/" >> $HDUSER_HOME/.bashrc
 #sourcing the bash file
 eval "$(cat $HDUSER_HOME/.bashrc)"
 
-sudo cp $FLUME_HOME/conf/flume-env.sh.template $FLUME_HOME/conf/flume-env.sh
-echo "export JAVA_HOME=$JAVA_HOME" | sudo tee -a  $FLUME_HOME/conf/flume-env.sh
-echo 'export JAVA_OPTS="-Xms100m -Xmx200m -Dcom.sun.management.jmxremote"' | sudo tee -a $FLUME_HOME/conf/flume-env.sh
+cp $FLUME_HOME/conf/flume-env.sh.template $FLUME_HOME/conf/flume-env.sh
+echo "export JAVA_HOME=$JAVA_HOME" | tee -a  $FLUME_HOME/conf/flume-env.sh
+echo 'export JAVA_OPTS="-Xms100m -Xmx200m -Dcom.sun.management.jmxremote"' | tee -a $FLUME_HOME/conf/flume-env.sh
 
 #----------------------------------------------------------------------------
 
@@ -46,10 +46,12 @@ touch $HDUSER_HOME/access.log
 #----------------------------------------------------------------------------
 
 #-----------------Creating the configuration file-----------------------------
-mkdir -p $HDUSER_HOME/flume/conf
 
-cp configs/flume.conf $HDUSER_HOME/flume/conf
-sed -i "s|HDUSER_HOME|$HOME|g" $HDUSER_HOME/flume/conf/flume.conf
+cp configs/flume.conf $FLUME_HOME/conf/local.conf
+sed -i "s|HDUSER_HOME|$HOME|g" $FLUME_HOME/conf/local.conf
+
+cp configs/netcat.conf $FLUME_HOME/conf/
 #-----------------------------------------------------------------------------
-#flume-ng agent --conf $FLUME_HOME/conf/ -f $FLUME_HOME/conf/flume.conf -n FileAgent
+#flume-ng agent --conf $FLUME_HOME/conf/ -f $FLUME_HOME/conf/local.conf -n FileAgent
 
+#flume-ng agent --conf $FLUME_HOME/conf/ --conf-file $FLUME_HOME/conf/netcat-hbase.conf --name agent1 -Dflume.root.logger=DEBUG,console
