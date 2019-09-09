@@ -30,6 +30,8 @@ echo "" >> $HDUSER_HOME/.bashrc
 echo "#Set SQOOP_HOME" >> $HDUSER_HOME/.bashrc
 echo "export SQOOP_HOME=/usr/local/sqoop" >> $HDUSER_HOME/.bashrc
 echo "export PATH=\$PATH:\$SQOOP_HOME/bin" >> $HDUSER_HOME/.bashrc
+echo "export HIVE_CONF_DIR=\$HIVE_HOME/conf" >> $HDUSER_HOME/.bashrc
+echo "export HADOOP_CLASSPATH=\$HADOOP_CLASSPATH:\$HIVE_HOME/lib/*" >> $HDUSER_HOME/.bashrc
 #---------------------------------------------------------------------
 #------------------Configuring Sqoop----------------------------------------
 sudo cp configs/sqoop-env.sh /usr/local/sqoop/conf/
