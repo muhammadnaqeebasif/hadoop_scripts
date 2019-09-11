@@ -51,11 +51,11 @@ rating_time STRING COMMENT 'time stamp for each user'
 )
 COMMENT 'This table holds the rating for each movie'
 ROW FORMAT DELIMITED 
-FIELDS TERMINATED BY '|'
+FIELDS TERMINATED BY '\t'
 LINES TERMINATED BY '\n'
 STORED AS TEXTFILE
 LOCATION '/user/hive/warehouse/ml-100k.db/ratings';
 
 -- loading the movies data from ml-100k
-LOAD DATA INPATH '/user/hadoop/ml-100k/u.data'
+LOAD DATA INPATH '/user/hadoop/ml-100k/u.data' OVERWRITE
 INTO TABLE ml100k.ratings;
