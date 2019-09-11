@@ -27,6 +27,7 @@ mv $HDUSER_HOME/apache-flume-1.9.0-bin/ $HDUSER_HOME/flume
 echo "" >> $HDUSER_HOME/.bashrc
 echo "#Set FLUME_HOME" >> $HDUSER_HOME/.bashrc
 echo "export FLUME_HOME=$HDUSER_HOME/flume" >> $HDUSER_HOME/.bashrc
+echo "export FLUME_CONF=\$FLUME_HOME/conf" >> $HDUSER_HOME/.bashrc
 echo "export PATH=\$PATH:\$FLUME_HOME/bin/" >> $HDUSER_HOME/.bashrc
 #sourcing the bash file
 eval "$(cat $HDUSER_HOME/.bashrc)"
@@ -47,11 +48,15 @@ touch $HDUSER_HOME/access.log
 
 #-----------------Creating the configuration file-----------------------------
 
-cp configs/flume.conf $FLUME_HOME/conf/local.conf
-sed -i "s|HDUSER_HOME|$HOME|g" $FLUME_HOME/conf/local.conf
+cp configs/* $FLUME_HOME/conf/
+sed -i "s|HDUSER_HOME|$HOME|g" $FLUME_HOME/conf/local_*.conf
 
-cp configs/netcat.conf $FLUME_HOME/conf/
+cp configs/netcat_hbase.conf $FLUME_HOME/conf/
+
+# creating directory for twitter data in hdfs
+hdfs dfs -mkdir -p /user/hadoop/twitter_data 
 #-----------------------------------------------------------------------------
-#flume-ng agent --conf $FLUME_HOME/conf/ -f $FLUME_HOME/conf/local.conf -n FileAgent
+
+#flume-ng agent --conf $FLUME_HOME/conf/ -f $FLUME_HOME/conf/local_hadoop.conf -n FileAgent
 
 #flume-ng agent --conf $FLUME_HOME/conf/ --conf-file $FLUME_HOME/conf/netcat-hbase.conf --name agent1 -Dflume.root.logger=DEBUG,console
