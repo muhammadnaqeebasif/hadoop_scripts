@@ -2,7 +2,7 @@
 eval "$(cat credentials.txt)"
 
 if [ "$(whoami)" != "$HDUSER" ]; then
-        echo "Script must be run as user: hduser"
+        echo "Script must be run as user: $HDUSER"
         exit
 fi
 
