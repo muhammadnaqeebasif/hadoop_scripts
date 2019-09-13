@@ -82,3 +82,6 @@ cp binaries/hadoop-streaming-2.9.2.jar $HADOOP_INSTALL/hadoop-streaming.jar
 
 python MapReduce/best_ratings.py -r hadoop --hadoop-streaming-jar $HADOOP_INSTALL/hadoop-streaming.jar ml-100k/u.data
 
+# Copying ml-100k data to hdfs
+hadoop fs -copyFromLocal ml-100k .
+
