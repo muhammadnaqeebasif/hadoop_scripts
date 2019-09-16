@@ -44,7 +44,7 @@ echo $PASS | sudo echo "export JAVA_HOME=$JAVA_HOME" >> $HBASE_HOME/conf/hbase-e
 #-------------------------------------------------------------------------------
 
 #------------------Configuring HBase-------------------------------------------
-sudo chown $HDUSER:hadoop $HBASE_HOME
+sudo chown -R $HDUSER:hadoop $HBASE_HOME
 cp configs/hbase-site.xml $HBASE_HOME/conf/hbase-site.xml
 # Creating zookeeper directory
 sudo mkdir -p /hadoop/zookeeper
