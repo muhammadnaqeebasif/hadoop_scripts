@@ -31,6 +31,9 @@ echo "export SPARK_HOME=/usr/local/spark" >> $HDUSER_HOME/.bashrc
 echo "export HADOOP_CONF_DIR=\$HADOOP_INSTALL/etc/hadoop/" >> $HDUSER_HOME/.bashrc
 echo "export LD_LIBRARY_PATH=\$HADOOP_INSTALL/lib/native/:$LD_LIBRARY_PATH" >> $HDUSER_HOME/.bashrc
 
+#sourcing the bash file
+eval "$(cat $HDUSER_HOME/.bashrc)"
+
 #-----------------Configuring Spark -----------------------------------------
 sudo chown -R $HDUSER:hadoop $SPARK_HOME
 mv $SPARK_HOME/conf/spark-defaults.conf.template $SPARK_HOME/conf/spark-defaults.conf
