@@ -37,3 +37,6 @@ sudo -u $HDUSER bash kafka/setup.sh
 
 #-----------Installing Nifi------------------
 sudo -u $HDUSER bash nifi/setup.sh
+
+#-----------Installing Spark-----------------
+sudo -u $HDUSER bash spark/setup.sh
