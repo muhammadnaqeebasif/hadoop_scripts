@@ -40,3 +40,12 @@ sudo -u $HDUSER bash nifi/setup.sh
 
 #-----------Installing Spark-----------------
 sudo -u $HDUSER bash spark/setup.sh
+
+#-----------Installing cassandra--------------
+sudo -u $HDUSER bash cassandra/setup.sh
+
+#------------Installing mongodb----------------
+sudo -u $HDUSER bash mongodb/setup.sh
+
+#------------Installing zeppelin----------------
+sudo -u $HDUSER bash zeppelin/setup.sh
