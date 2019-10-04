@@ -22,7 +22,7 @@ sudo apt update
 sudo apt install -y cassandra
 
 # Copying the cassandrad configuration
-sudo configs/cassandra-env.sh /etc/cassandra/cassandra-env.sh 
+sudo cp configs/cassandra-env.sh /etc/cassandra/cassandra-env.sh 
 
 # Enable and Start Cassandra
 sudo systemctl enable cassandra
